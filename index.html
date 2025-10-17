@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аленова Салтанат Ибраевна - Преподаватель информатики и программирования</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8faff 0%, #e8f2ff 50%, #dae8ff 100%);
+            color: #2d3748;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="1"/></pattern></defs><rect width="400" height="400" fill="url(%23grid)"/><circle cx="80" cy="80" r="2" fill="rgba(139,92,246,0.3)"/><circle cx="320" cy="120" r="1.5" fill="rgba(59,130,246,0.4)"/><circle cx="200" cy="300" r="2.5" fill="rgba(99,102,241,0.2)"/><circle cx="350" cy="250" r="1" fill="rgba(139,92,246,0.5)"/><path d="M50,350 Q150,300 250,350 T450,350" stroke="rgba(99,102,241,0.15)" stroke-width="2" fill="none"/><path d="M0,200 Q100,150 200,200 T400,200" stroke="rgba(59,130,246,0.1)" stroke-width="1.5" fill="none"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            background: linear-gradient(135deg, #1e293b 0%, #3730a3 50%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero-text .title {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            color: #6366f1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-text .greeting {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+            color: #475569;
+            font-weight: 400;
+        }
+
+        .hero-photo {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.2s forwards;
+        }
+
+        .photo-circle {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 
+                0 25px 50px rgba(99, 102, 241, 0.15),
+                0 0 0 8px rgba(99, 102, 241, 0.1),
+                inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 4px solid #e2e8f0;
+        }
+
+        .photo-circle::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4, #10b981);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .photo-circle:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 
+                0 35px 70px rgba(99, 102, 241, 0.25),
+                0 0 0 12px rgba(99, 102, 241, 0.15);
+        }
+
+        .photo-circle:hover::before {
+            opacity: 1;
+        }
+
+        .photo-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar.visible {
+            transform: translateY(0);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #004aad;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-item a:hover,
+        .nav-item a.active {
+            color: #004aad;
+            background: rgba(0, 74, 173, 0.1);
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: #f0f0f0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #004aad;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #004aad;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 74, 173, 0.1);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-card h3 {
+            color: #004aad;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+        }
+
+        /* Education & Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #004aad;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -20px;
+            border-left-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -20px;
+            border-right-color: white;
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 20px;
+            width: 120px;
+            text-align: center;
+            background: #004aad;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: -180px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            left: -180px;
+        }
+
+        .timeline-content h3 {
+            color: #004aad;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .institution {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Achievements Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 74, 173, 0.1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .achievement-card h3 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #004aad, #0066cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h3 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(0, 74, 173, 0.1);
+            color: #004aad;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+            color: #1e293b;
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><circle cx="100" cy="100" r="3" fill="rgba(59,130,246,0.2)"/><circle cx="500" cy="80" r="2" fill="rgba(99,102,241,0.3)"/><circle cx="300" cy="300" r="4" fill="rgba(139,92,246,0.15)"/><path d="M0,200 Q150,150 300,200 T600,200" stroke="rgba(59,130,246,0.1)" stroke-width="2" fill="none"/><path d="M100,0 Q200,100 300,50 T500,100" stroke="rgba(99,102,241,0.08)" stroke-width="1.5" fill="none"/></svg>');
+            opacity: 0.6;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .philosophy h2 {
+            color: #1e40af;
+            margin-bottom: 2rem;
+        }
+
+        .philosophy-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #334155;
+            opacity: 0.9;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #004aad;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #004aad, #0066cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            color: #004aad;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f0f0f0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 74, 173, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #004aad;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #004aad;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f0f0f0;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #004aad;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #004aad;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #003d91;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 74, 173, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #004aad;
+            color: #004aad;
+        }
+
+        .btn-outline:hover {
+            background: #004aad;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #004aad;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #999;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-text .title {
+                font-size: 1.4rem;
+            }
+
+            .hero-text .greeting {
+                font-size: 1.1rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 40px);
+                left: 40px !important;
+            }
+
+            .timeline-date {
+                position: static !important;
+                margin-bottom: 1rem;
+                width: auto;
+            }
+
+            .timeline-content::before {
+                left: -20px !important;
+                border-right-color: white !important;
+                border-left-color: transparent !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .photo-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .photo-placeholder {
+                width: 160px;
+                height: 160px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .title {
+                font-size: 1.2rem;
+            }
+
+            .hero-text .greeting {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about-card,
+            .contact-form,
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">С. Аленова</div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home">Главная</a></li>
+                    <li class="nav-item"><a href="#about">Обо мне</a></li>
+                    <li class="nav-item"><a href="#education">Образование</a></li>
+                    <li class="nav-item"><a href="#experience">Опыт</a></li>
+                    <li class="nav-item"><a href="#achievements">Достижения</a></li>
+                    <li class="nav-item"><a href="#portfolio">Портфолио</a></li>
+                    <li class="nav-item"><a href="#contact">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Аленова Салтанат Ибраевна</h1>
+                    <div class="title">Преподаватель специальных дисциплин</div>
+                    <div class="greeting">
+                        Добро пожаловать в мой цифровой мир! Я — преподаватель с многолетним опытом, который стремится вдохновить студентов на изучение информационных технологий и программирования. Здесь вы найдете информацию о моей педагогической деятельности, проектах и достижениях.
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <div class="photo-circle">
+                        <div class="photo-placeholder">👩‍🏫</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Обо мне</h2>
+                <p class="section-subtitle">Познакомьтесь с моей профессиональной философией и подходом к образованию</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card fade-in">
+                    <h3><span class="card-icon">📚</span>Биография</h3>
+                    <p>Преподаватель информатики и программирования с более чем 6-летним опытом работы в сфере образования. Специализируюсь на современных методах обучения IT-дисциплинам, разработке цифровых образовательных ресурсов и подготовке студентов к работе в IT-индустрии.</p>
+                    <p>Постоянно совершенствую свои знания в области новых технологий, изучаю инновационные педагогические подходы и активно внедряю их в учебный процесс.</p>
+                </div>
+                <div class="about-card fade-in">
+                    <h3><span class="card-icon">🎯</span>Педагогическое кредо</h3>
+                    <p><em>"Образование — это не подготовка к жизни, образование — это сама жизнь."</em></p>
+                    <p>Верю, что каждый студент обладает уникальным потенциалом для освоения информационных технологий. Моя задача — создать комфортную и стимулирующую образовательную среду, где теоретические знания органично сочетаются с практическими навыками.</p>
+                </div>
+                <div class="about-card fade-in">
+                    <h3><span class="card-icon">🚀</span>Профессиональная миссия</h3>
+                    <p>Подготовка компетентных IT-специалистов, способных адаптироваться к быстро меняющемуся технологическому миру. Стремлюсь не просто передать знания, а научить студентов критически мыслить, решать сложные задачи и быть готовыми к вызовам цифровой эпохи.</p>
+                    <p>Активно продвигаю использование современных образовательных технологий и методик в учебном процессе.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Образование</h2>
+                <p class="section-subtitle">Мой путь профессионального развития и непрерывного обучения</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2018-2020</div>
+                    <div class="timeline-content">
+                        <h3>Магистр естественных наук</h3>
+                        <div class="institution">Актюбинский Региональный государственный университет</div>
+                        <p>Специальность: "Информатика"<br>
+                        Диплом с отличием. Магистерская диссертация: "Современные методы преподавания программирования в высших учебных заведениях"</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2014-2018</div>
+                    <div class="timeline-content">
+                        <h3>Бакалавр информационных систем</h3>
+                        <div class="institution">Актюбинский Региональный государственный университет<</div>
+                        <p>Специальность: "Информационные системы"<br>
+                        Красный диплом. Дипломная работа: "Разработка веб-платформы для дистанционного обучения"</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Сертификат повышения квалификации</h3>
+                        <div class="institution">Центр педагогического мастерства</div>
+                        <p>Курс: "Цифровые технологии в образовании и инновационные методы преподавания IT-дисциплин" (144 часа)</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h3>Международная сертификация</h3>
+                        <div class="institution">Microsoft Education</div>
+                        <p>Microsoft Certified Educator (MCE)<br>
+                        Сертификат по использованию технологий Microsoft в образовательном процессе</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Опыт работы</h2>
+                <p class="section-subtitle">Профессиональный путь в сфере IT-образования</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2021-н.в.</div>
+                    <div class="timeline-content">
+                        <h3>Старший преподаватель специальных дисциплин</h3>
+                        <div class="institution">Актюбинский Высший политехнический колледж</div>
+                        <p><strong>Направления преподавания:</strong> Основы программирования (Python, JavaScript), Веб-разработка (HTML, CSS, React), Базы данных (MySQL, PostgreSQL), Компьютерные сети<br>
+                        <strong>Проекты:</strong> Разработка онлайн-платформы для дистанционного обучения, создание интерактивных учебных материалов</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2018-2021</div>
+                    <div class="timeline-content">
+                        <h3>Преподаватель информатики</h3>
+                        <div class="institution">Технический колледж №15</div>
+                        <p><strong>Обязанности:</strong> Ведение занятий по информатике и ИКТ, разработка учебных программ и методических материалов, руководство дипломными проектами студентов<br>
+                        <strong>Достижения:</strong> Внедрение новых методик преподавания, повышение успеваемости студентов на 25%</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2017-2018</div>
+                    <div class="timeline-content">
+                        <h3>Ассистент преподавателя</h3>
+                        <div class="institution">КазНТУ им. К.И. Сатпаева</div>
+                        <p><strong>Деятельность:</strong> Проведение лабораторных работ по программированию, консультирование студентов, помощь в организации учебного процесса<br>
+                        <strong>Специализация:</strong> Языки программирования C++, Java, основы алгоритмизации</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Достижения</h2>
+                <p class="section-subtitle">Признание профессиональных заслуг и вклада в образование</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in">
+                    <span class="achievement-icon">🏆</span>
+                    <h3>Лучший преподаватель года</h3>
+                    <p>Награда за выдающиеся достижения в области IT-образования и инновационные методы преподавания (2022, 2023)</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <span class="achievement-icon">📖</span>
+                    <h3>Научные публикации</h3>
+                    <p>18 научных статей в рецензируемых журналах по методике преподавания информатики и цифровым образовательным технологиям</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <span class="achievement-icon">👨‍🎓</span>
+                    <h3>Подготовка специалистов</h3>
+                    <p>Более 250 выпускников успешно трудоустроены в IT-компаниях Казахстана и зарубежья</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <span class="achievement-icon">🥇</span>
+                    <h3>Олимпиады и конкурсы</h3>
+                    <p>Подготовка 15 призеров республиканских олимпиад по программированию и информатике</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <span class="achievement-icon">🌐</span>
+                    <h3>Международное сотрудничество</h3>
+                    <p>Участие в 8 международных конференциях по IT-образованию, обмен опытом с зарубежными коллегами</p>
+                </div>
+                <div class="achievement-card fade-in">
+                    <span class="achievement-icon">💡</span>
+                    <h3>Инновационные проекты</h3>
+                    <p>Разработка и внедрение 5 цифровых образовательных платформ и интерактивных учебных курсов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Портфолио проектов</h2>
+                <p class="section-subtitle">Галерея образовательных проектов и методических разработок</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">💻</div>
+                    <div class="portfolio-content">
+                        <h3>Интерактивная платформа "CodeLearn"</h3>
+                        <p>Веб-платформа для изучения программирования с интерактивными заданиями, автоматической проверкой кода и системой прогресса студентов.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">📱</div>
+                    <div class="portfolio-content">
+                        <h3>Мобильное приложение "IT-Glossary"</h3>
+                        <p>Образовательное приложение с IT-терминами на трех языках (казахский, русский, английский) с функцией поиска и избранного.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">🎓</div>
+                    <div class="portfolio-content">
+                        <h3>Система управления обучением "EduTrack"</h3>
+                        <p>Комплексная LMS для автоматизации учебного процесса: расписание, оценки, домашние задания, коммуникация студент-преподаватель.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">🌐</div>
+                    <div class="portfolio-content">
+                        <h3>Онлайн-курс "Web Development Basics"</h3>
+                        <p>Авторский курс по основам веб-разработки с видеоуроками, практическими заданиями и финальными проектами для начинающих разработчиков.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">🤖</div>
+                    <div class="portfolio-content">
+                        <h3>AI-ассистент для обучения "StudyBot"</h3>
+                        <p>Чат-бот на базе искусственного интеллекта для помощи студентам в изучении программирования и решении задач по информатике.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Telegram API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-image">📊</div>
+                    <div class="portfolio-content">
+                        <h3>Аналитическая панель "EduAnalytics"</h3>
+                        <p>Система аналитики успеваемости студентов с визуализацией данных, прогнозированием результатов и рекомендациями для улучшения обучения.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Plotly</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2>Философия преподавания</h2>
+                <div class="philosophy-quote">
+                    "Технологии меняются, но принципы остаются. Моя задача — научить студентов не просто использовать инструменты, а понимать логику, стоящую за ними. Каждый урок — это возможность открыть новый мир возможностей и вдохновить на создание будущего."
+                </div>
+                <p>Я верю в силу практического обучения, где каждая теоретическая концепция подкрепляется реальными проектами. Стремлюсь создать среду, где ошибки становятся ступенями к успеху, а любопытство — главным двигателем прогресса.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Отзывы студентов</h2>
+                <p class="section-subtitle">Что говорят о моих курсах выпускники и студенты</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        Салтанат Ибраевна — удивительный преподаватель! Она умеет объяснить сложные концепции программирования простым языком. Благодаря её урокам я полюбил веб-разработку и сейчас работаю frontend-разработчиком.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">АК</div>
+                        <div class="author-info">
+                            <h4>Алмас Касымов</h4>
+                            <p>Выпускник 2023, Frontend Developer в Kolesa Group</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        Лучший преподаватель информатики! Всегда готова помочь, объясняет материал доступно и интересно. Её практические задания помогли мне подготовиться к работе в IT-компании. Очень благодарна за знания и поддержку!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ДС</div>
+                        <div class="author-info">
+                            <h4>Диана Сарсенова</h4>
+                            <p>Выпускница 2022, Python Developer в Beeline Kazakhstan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        Салтанат Ибраевна не просто преподает — она вдохновляет! Её уроки всегда проходят в дружественной атмосфере, где можно задать любой вопрос. Благодаря ей я открыл для себя мир программирования и нашел свое призвание.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ЕН</div>
+                        <div class="author-info">
+                            <h4>Ерлан Нурланов</h4>
+                            <p>Студент 3 курса, стажер в Kaspi.kz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Контакты</h2>
+                <p class="section-subtitle">Свяжитесь со мной для сотрудничества или консультаций</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3 style="color: #004aad; margin-bottom: 2rem;">Контактная информация</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            s.alenova@edu.kz<br>
+                            saltanat.alenova@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Telegram</strong><br>
+                            @saltanat_alenova
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            linkedin.com/in/saltanat-alenova
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div>
+                            <strong>ResearchGate</strong><br>
+                            researchgate.net/profile/Saltanat-Alenova
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="#" class="btn" onclick="downloadResume()">📄 Скачать резюме (PDF)</a>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3 style="color: #004aad; margin-bottom: 2rem;">Форма обратной связи</h3>
+                    <div class="success-message" id="successMessage">
+                        Спасибо за ваше сообщение! Я отвечу в ближайшее время.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Тема сообщения</label>
+                            <input type="text" id="subject" name="subject" placeholder="Консультация, сотрудничество, вопрос...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea id="message" name="message" required placeholder="Напишите ваше сообщение..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Аленова Салтанат Ибраевна</h3>
+                    <p>Преподаватель информатики и программирования</p>
+                    <p>Алматинский колледж информационных технологий</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <p><a href="#about">Обо мне</a></p>
+                    <p><a href="#portfolio">Портфолио</a></p>
+                    <p><a href="#achievements">Достижения</a></p>
+                    <p><a href="#contact">Контакты</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <p><a href="#">LinkedIn</a></p>
+                    <p><a href="#">ResearchGate</a></p>
+                    <p><a href="#">Telegram</a></p>
+                    <p><a href="#">Email</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Аленова Салтанат Ибраевна. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar visibility on scroll
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            if (!name || !email || !message) {
+                return;
+            }
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Download resume function
+        function downloadResume() {
+            const resumeContent = `
+РЕЗЮМЕ
+Аленова Салтанат Ибраевна
+Преподаватель информатики и программирования
+
+КОНТАКТНАЯ ИНФОРМАЦИЯ:
+Email: s.alenova@edu.kz
+Telegram: @saltanat_alenova
+LinkedIn: linkedin.com/in/saltanat-alenova
+
+ОБРАЗОВАНИЕ:
+2018-2020: Магистр педагогических наук
+           КазНПУ им. Абая, "Информатика и вычислительная техника в образовании"
+2014-2018: Бакалавр информационных систем
+           КазНТУ им. К.И. Сатпаева, "Информационные системы"
+
+ОПЫТ РАБОТЫ:
+2021-н.в.: Старший преподаватель информатики
+           Алматинский колледж информационных технологий
+2018-2021: Преподаватель информатики
+           Технический колледж №15
+2017-2018: Ассистент преподавателя
+           КазНТУ им. К.И. Сатпаева
+
+ДОСТИЖЕНИЯ:
+• Лучший преподаватель года (2022, 2023)
+• 18 научных публикаций по методике преподавания IT
+• Подготовка 250+ выпускников для IT-индустрии
+• 15 призеров республиканских олимпиад по программированию
+• Участие в 8 международных конференциях по IT-образованию
+
+КЛЮЧЕВЫЕ НАВЫКИ:
+• Языки программирования: Python, JavaScript, Java, C++
+• Веб-технологии: HTML, CSS, React, Node.js, Django
+• Базы данных: MySQL, PostgreSQL, MongoDB
+• Инструменты: Git, Docker, VS Code
+• Методика преподавания IT-дисциплин
+• Разработка цифровых образовательных ресурсов
+
+ПРОЕКТЫ:
+• Интерактивная платформа "CodeLearn" для изучения программирования
+• Мобильное приложение "IT-Glossary" с IT-терминами
+• Система управления обучением "EduTrack"
+• AI-ассистент для обучения "StudyBot"
+• Аналитическая панель "EduAnalytics"
+
+СЕРТИФИКАТЫ:
+• Microsoft Certified Educator (MCE) - 2022
+• Цифровые технологии в образовании - 2023
+            `;
+            
+            const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Резюме_Аленова_Салтанат_Ибраевна.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98fda4336582e4c2',t:'MTc2MDY4MTUxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
